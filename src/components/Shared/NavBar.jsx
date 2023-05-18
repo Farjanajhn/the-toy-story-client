@@ -7,8 +7,8 @@ const NavBar = () => {
   const navItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
         <li className='font-semibold'><a>My Toy</a></li>
-        <li className='font-semibold'><a>All Toys</a></li>
-        <li className='font-semibold'><a>Add a toy</a></li>
+        <li className='font-semibold'><Link to="/allToy">All Toys</Link></li>
+        <li className='font-semibold'><Link to="/add">Add a toy</Link></li>
        <li className='font-semibold'><Link to='blogs'>Blogs</Link></li>
   </>
   return (
