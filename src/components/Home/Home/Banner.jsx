@@ -12,9 +12,9 @@ const Banner = () => {
   <p className="mb-5 text-black font-semibold text-xl">
 Welcome to our toy wonderland, where imagination knows no bounds! Discover a captivating collection of toys that will ignite the joy and curiosity in children of all ages. From cuddly companions to mind-boggling puzzles, our online store offers a treasure trove of entertainment. Explore our vibrant selection, embrace the power of play, and bring endless smiles to the faces of your little ones. Start your magical journey with us today!</p>
           <div>
-            <Link to="registration"><button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg  bg-indigo-400">Registration</button></Link>
+            <Link to="/registration"><button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg  bg-indigo-400">Registration</button></Link>
           <p className="text-black font-semibold text-xl ">OR</p>
-          <Link to ="registration"><button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg  bg-indigo-400">Login</button></Link>
+          <Link to ="/login"><button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg  bg-indigo-400">Login</button></Link>
          </div>
 </div>
 </div>

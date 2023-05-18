@@ -1,5 +1,45 @@
 
+
+import { useState } from "react";
+import { useContext } from "react";
+import { Form, Link } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+
 const Registration = () => {
+  const [error, setError] = useState();
+  const { createUser } = useContext(AuthContext);
+  const handleRegister = event => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.photo.value;
+
+    if (!email || !password) {
+      setError('A USER CAN NOT SUBMIT AN EMPTY EMAIL AND PASSWORD FIELDS');
+      return;
+    }
+   else if (password.length < 6) {
+      setError('password should be more than 6 character')
+      return;
+    }
+
+    createUser(email, password)
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch(error => {
+      
+        const errorMessage = error.message
+        const errorCode = error.code;
+
+       console.error(errorCode); 
+        setError(errorMessage )
+      })
+ 
+  }
   return (
     <div>
      <div className="hero min-h-screen bg-base-200">
@@ -10,7 +50,8 @@ const Registration = () => {
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <div className="card-body">
-        <div className="form-control">
+              <Form onSubmit={handleRegister}>
+              <div className="form-control">
           <label className="label">
             <span className="label-text">Name</span>
           </label>
@@ -38,8 +79,14 @@ const Registration = () => {
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
-        </div>
+          <button type="submit"className="btn btn-primary">Login</button>
+                </div>
+                <p>
+                Already have an account?
+          <Link to='/login'>Login</Link> 
+                </p> 
+                <p>{error}</p>
+     </Form>
       </div>
     </div>
   </div>
