@@ -1,6 +1,16 @@
+import { useState } from "react";
+import { Form } from "react-router-dom";
 
 
 const Login = () => {
+  const [error, setError] = useState();
+  const handleSignIn = event => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.value;
+    console.log(email, password);
+  }
   return (
     <div>
  <div className="hero min-h-screen bg-base-200">
@@ -10,8 +20,10 @@ const Login = () => {
       <p className="py-6">Login for get amazing offer and grab your faviroute lego set</p>
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <div className="card-body">
-        <div className="form-control">
+            <div className="card-body">
+              <p>{error}</p>
+              <Form onSubmit={handleSignIn}>
+              <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
@@ -29,6 +41,7 @@ const Login = () => {
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
         </div>
+      </Form>
       </div>
     </div>
   </div>

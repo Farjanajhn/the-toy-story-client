@@ -49,7 +49,8 @@ const Registration = () => {
      <img className="h-96 rounded-xl" src="https://www.leadquizzes.com/wp-content/uploads/2019/06/New-blog-graphic-16.jpg" alt="" />
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <div className="card-body">
+            <div className="card-body">
+            <p className="text-red-600">{error}</p>
               <Form onSubmit={handleRegister}>
               <div className="form-control">
           <label className="label">
@@ -78,15 +79,19 @@ const Registration = () => {
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
         </div>
-        <div className="form-control mt-6">
-          <button type="submit"className="btn btn-primary">Login</button>
+                <div className="form-control mt-6">
+              
+          <button type="submit"className="btn btn-primary">Submit</button>
                 </div>
                 <p>
                 Already have an account?
-          <Link to='/login'>Login</Link> 
+                  
+                  <Link  to='/login'>Login</Link> 
+       
                 </p> 
-                <p>{error}</p>
-     </Form>
+  
+              </Form>
+             
       </div>
     </div>
   </div>
