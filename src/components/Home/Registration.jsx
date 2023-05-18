@@ -6,7 +6,7 @@ const Registration = () => {
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
       <h1 className="text-5xl font-bold text-center mb-2">Registration now!</h1>
-     <img src="https://www.leadquizzes.com/wp-content/uploads/2019/06/New-blog-graphic-16.jpg" alt="" />
+     <img className="h-96 rounded-xl" src="https://www.leadquizzes.com/wp-content/uploads/2019/06/New-blog-graphic-16.jpg" alt="" />
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <div className="card-body">

@@ -9,7 +9,7 @@ const NavBar = () => {
         <li className='font-semibold'><a>My Toy</a></li>
         <li className='font-semibold'><a>All Toys</a></li>
         <li className='font-semibold'><a>Add a toy</a></li>
-       <li className='font-semibold'><a>Blogs</a></li>
+       <li className='font-semibold'><Link to='blogs'>Blogs</Link></li>
   </>
   return (
 
