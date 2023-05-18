@@ -5,11 +5,11 @@ import logo from './../../assets/logo.png';
 
 const NavBar = () => {
   const navItems = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><a>My Toy</a></li>
-        <li><a>All Toys</a></li>
-        <li><a>Add a toy</a></li>
-       <li><a>Blogs</a></li>
+        <li className='font-semibold'><Link to='/'>Home</Link></li>
+        <li className='font-semibold'><a>My Toy</a></li>
+        <li className='font-semibold'><a>All Toys</a></li>
+        <li className='font-semibold'><a>Add a toy</a></li>
+       <li className='font-semibold'><a>Blogs</a></li>
   </>
   return (
 
@@ -27,8 +27,8 @@ const NavBar = () => {
         </ul>
       </div>
         <div>
-          <img src={logo} alt="" />
-          <p className='text-center'>Toy Story</p>
+          <img className='rounded-xl' src={logo} alt="" />
+          <p className='text-center font-semibold '>Toy Star</p>
        </div>
         
     </div>
@@ -38,7 +38,7 @@ const NavBar = () => {
       </ul>
     </div>
     <div className="navbar-end">
-      <a className="btn">Login</a>
+      <Link to="login"><a className="btn mr-2">Login</a></Link>
     </div>
   </div>
 
