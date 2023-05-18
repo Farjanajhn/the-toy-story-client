@@ -83,15 +83,15 @@ const Registration = () => {
               
           <button type="submit"className="btn btn-primary">Submit</button>
                 </div>
-                <p>
+              
+  
+              </Form>
+              <p>
                 Already have an account?
                   
                   <Link  to='/login'>Login</Link> 
        
                 </p> 
-  
-              </Form>
-             
       </div>
     </div>
   </div>

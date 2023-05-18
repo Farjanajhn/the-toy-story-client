@@ -1,15 +1,27 @@
-import { useState } from "react";
-import { Form } from "react-router-dom";
+ import { useContext } from "react"; 
+
+import { Form, Link } from "react-router-dom";
+ import { AuthContext } from "../Provider/AuthProvider"; 
 
 
 const Login = () => {
-  const [error, setError] = useState();
+/*   const [error, setError] = useState(); */
+  const {signIn}=useContext(AuthContext) 
   const handleSignIn = event => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
-    const password = form.value;
+    const password = form.password.value;
     console.log(email, password);
+   signIn(email, password)
+      .then(result => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+      })
+      .catch(error => {
+        console.error(error.massage);
+        alert('error', error.massage);
+    }) 
   }
   return (
     <div>
@@ -21,7 +33,7 @@ const Login = () => {
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
-              <p>{error}</p>
+          {/*     <p>{error}</p> */}
               <Form onSubmit={handleSignIn}>
               <div className="form-control">
           <label className="label">
@@ -33,7 +45,7 @@ const Login = () => {
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="text" placeholder="password" name="password" className="input input-bordered" />
+          <input type="password" name="password" placeholder="password" className="input input-bordered" />
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
@@ -41,7 +53,13 @@ const Login = () => {
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
         </div>
-      </Form>
+              </Form>
+              <p>
+                Do not have an account?
+                  
+                  <Link  to='/registration'>Register Now!</Link> 
+       
+                </p> 
       </div>
     </div>
   </div>
