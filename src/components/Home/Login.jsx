@@ -1,12 +1,48 @@
  import { useContext } from "react"; 
 
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useLocation, useNavigate } from "react-router-dom";
  import { AuthContext } from "../Provider/AuthProvider"; 
 
 
 const Login = () => {
 /*   const [error, setError] = useState(); */
-  const {signIn}=useContext(AuthContext) 
+  const { signIn, signInWithGoogle,
+    signInWithGithub } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/'
+  
+  //googlesignin
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+    .then(result => {
+      const loggeduser = result.user;
+      console.log(loggeduser);
+
+      navigate('from');
+    })
+    .catch(error => {
+      console.log('error', error.massage);
+     /*  setError(error.massage) */
+  })
+  }
+  //handleSignIn with github
+  const handleSignInWthGitHub = () => {
+    
+    signInWithGithub()
+    .then(result => {
+      const signedUser = result.user;
+      console.log(signedUser);
+
+      navigate('from')
+    })
+      .catch(error => {
+      
+ alert('error', error.massage);
+     /*  setError(error) */
+  })
+  }
   const handleSignIn = event => {
     event.preventDefault();
     const form = event.target;
@@ -17,6 +53,8 @@ const Login = () => {
       .then(result => {
         const loggedInUser = result.user;
         console.log(loggedInUser);
+        navigate('from')
+
       })
       .catch(error => {
         console.error(error.massage);
@@ -63,11 +101,11 @@ const Login = () => {
               
               <div className="flex flex-col w-full lg:flex-row">
                 <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">
-                <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Sign In with google</button>
+                <button onClick={handleGoogleSignIn} className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Sign In with google</button>
                 </div> 
   <div className="divider lg:divider-horizontal">OR</div> 
                 <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">
-                <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Sign In with google</button>
+                  <button onClick={handleSignInWthGitHub} className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Sign In with google</button>
   </div>
 </div>
       </div>

@@ -16,9 +16,9 @@ const NavBar = () => {
   }
   const navItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
-    {
-      user?    <li className='font-semibold'><Link to="myToy">My Toy</Link></li>:""
-     }
+    
+      <li className='font-semibold'><Link to="myToy">My Toy</Link></li>
+    
         <li className='font-semibold'><Link to="/allToy">All Toys</Link></li>
     {
       user? <li className='font-semibold'><Link to="/add">Add a toy</Link></li>:""
