@@ -57,7 +57,7 @@ const AddToy = () => {
     <span className="label-text">Seller Email</span>
   </label>
  
-    <input type="text" defaultValue={user?.email} className="input input-bordered" />
+    <input type="text" value={user?.email} className="input input-bordered" />
   <label className="label">
     <span className="label-text">Sub-Category</span>
   </label>

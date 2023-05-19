@@ -8,9 +8,12 @@ import { useEffect } from "react";
 
 
 const auth = getAuth(app)
+export const AuthContext = createContext(null)
 
-export const AuthContext=createContext(null)
+
 const AuthProvider = ({ children }) => {
+
+
   const [user, setUser] = useState(null) 
   const [loading, setLoading] = useState(true);
   
@@ -24,7 +27,9 @@ const AuthProvider = ({ children }) => {
   }
 
   const updateUser = (name, photo) => {
-    return updateProfile(auth.currentUser,name,photo)
+    setLoading(true);
+    return updateProfile(auth.currentUser, name, photo);
+
   }
 
   const signIn = (email, password) => {

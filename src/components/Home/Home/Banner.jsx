@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div className="hero max-h-screen">
-    <img src="https://img.freepik.com/premium-vector/children-with-simple-geometry-forms-different-geometric-shape-educational-geometry-children-back-school_253263-121.jpg?w=2000" alt="" />
+    <img src="https://admin.prod.gamesmen-anchorbuild.com/media/wysiwyg/categories/lego/lego_banner.jpg" alt="" />
 <div className="hero-overlay bg-opacity-30"></div>
 <div className="hero-content text-center text-neutral-content">
 <div className="max-w-lg">
