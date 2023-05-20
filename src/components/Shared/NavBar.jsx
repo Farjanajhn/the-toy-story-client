@@ -1,18 +1,20 @@
 
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import logo from './../../assets/logo.png';
 
 
 const NavBar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut }=useContext(AuthContext);
+  const navigate=useNavigate()
 
 
   const handleLogOut = () => {
     logOut()
       .then()
       .catch(error => console.log(error));
+    navigate('/')
   }
   const navItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
@@ -57,7 +59,7 @@ const NavBar = () => {
             <button onClick={handleLogOut} className="btn mr-2">Log out</button> 
       </div>:
         <div className="navbar-end">
-        <Link to="login"><a className="btn mr-2">Login</a></Link>
+        <Link to="login" className="btn mr-2">Login</Link>
       </div>
           
       }

@@ -11,9 +11,10 @@ const ShowToyes = ({ product }) => {
               <td>{price}</td> 
               <td>{quantity}</td> 
               <td>
-              <button className="btn btn-outline btn-primary"><Link to={`/products/${_id}`}>View Details</Link></button>
+              <button className="btn btn-outline btn-primary"><Link to={`/allToy/${_id}`}>View Details</Link></button>
               </td>
       </tr>
+  
 
   );
 };

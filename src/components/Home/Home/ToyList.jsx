@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 
 
 
-const ToyList = ({ data }) => {
-  const {name, toyName, price, quantity, category, description, rating, photo, email  } = data;
+const ToyList = ({ data,handleDelete }) => {
+  const { _id,name, toyName, price, quantity, category, rating, photo, email } = data;
+  
   return (
    
     <tr>
@@ -26,12 +28,14 @@ const ToyList = ({ data }) => {
       <td>{rating}</td>
       <td>{email}</td>
 
-        <th>
-          <button className="btn btn-ghost btn-xs bg-indigo-400">Update</button>
-        </th>
-        <th>
-          <button className="btn btn-ghost btn-xs bg-indigo-400">delete</button>
-        </th>
+        <td>
+         <Link to={`/update/${_id}`}><button  className="btn  btn-ghost btn-xs bg-indigo-400">Update</button></Link> 
+         
+        
+        </td>
+        <td>
+          <button onClick={()=>handleDelete(_id)}className="btn btn-ghost btn-xs bg-indigo-400">delete</button>
+        </td>
       </tr>
   );
 };

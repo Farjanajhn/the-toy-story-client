@@ -20,7 +20,7 @@ const Login = () => {
       const loggeduser = result.user;
       console.log(loggeduser);
 
-      navigate('from');
+      navigate(from);
     })
     .catch(error => {
       console.log('error', error.massage);
