@@ -8,7 +8,7 @@ const ViewDetails = () => {
   const { id } = useParams();
   console.log(id);
   useEffect(() => {
-    fetch('http://localhost:4000/products')
+    fetch(`http://localhost:4000/products/${id}`)
       .then(res => res.json())
       .then(data => {
         const foundDetail = data.find(d=>d._id == id);
@@ -17,8 +17,8 @@ const ViewDetails = () => {
   })
 
   return (
-    <div className=" my-4">
-      <h1>{detail.name}</h1>
+    <div className="">
+
       <div className="card card-compact w-96 bg-base-100 shadow-xl ">
   <figure><img src={detail.photo} alt="" /></figure>
   <div className="card-body">
