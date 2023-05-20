@@ -7,11 +7,12 @@ import { Form, Link, useLocation, useNavigate } from "react-router-dom";
 const Login = () => {
 /*   const [error, setError] = useState(); */
   const { signIn, signInWithGoogle,
-    signInWithGithub } = useContext(AuthContext);
+    signInWithGithub} = useContext(AuthContext);
   const navigate = useNavigate();
-  const location = useLocation();
+  const location = useLocation(); 
+  console.log(location)
 
-  const from = location.state?.from?.pathname || '/'
+const from = location.state?.from?.pathname || '/' 
   
   //googlesignin
   const handleGoogleSignIn = () => {
@@ -19,8 +20,8 @@ const Login = () => {
     .then(result => {
       const loggeduser = result.user;
       console.log(loggeduser);
-
-      navigate(from);
+/* 
+      navigate(from); */
     })
     .catch(error => {
       console.log('error', error.massage);
@@ -35,7 +36,7 @@ const Login = () => {
       const signedUser = result.user;
       console.log(signedUser);
 
-      navigate('from')
+      navigate('/')
     })
       .catch(error => {
       
@@ -53,7 +54,7 @@ const Login = () => {
       .then(result => {
         const loggedInUser = result.user;
         console.log(loggedInUser);
-        navigate('from')
+        navigate(from,{replace:true})
 
       })
       .catch(error => {
