@@ -1,8 +1,10 @@
 
 import { useContext } from 'react';
+import { FaUserCircle } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import logo from './../../assets/logo.png';
+/* import lego from './../../assets/lego.png' */
 
 
 const NavBar = () => {
@@ -55,11 +57,12 @@ const NavBar = () => {
     </div>
       {
         user ?
-        <div className="navbar-end">
-            <button onClick={handleLogOut} className="btn mr-2">Log out</button> 
+          <div className="navbar-end">
+            <FaUserCircle style={{ fontSize: '3rem',color: 'indigo' }}/>
+            <button onClick={handleLogOut} className="btn ml-2 mr-2 bg-indigo-800">Log out</button> 
       </div>:
         <div className="navbar-end">
-        <Link to="login" className="btn mr-2">Login</Link>
+        <Link to="login" className="btn mr-2  bg-indigo-800">Login</Link>
       </div>
           
       }
