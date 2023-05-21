@@ -1,12 +1,15 @@
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 
 
 
 
 
 const ViewDetails = () => {
-  const detail= useLoaderData();
-  console.log(detail)
+
+  const detail = useLoaderData();
+  useTitle('viewDetails');
+/*   console.log(detail) */
   return (
     <div className="">
     

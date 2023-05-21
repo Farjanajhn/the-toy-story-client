@@ -2,7 +2,9 @@
 import { FaGithub, FaGoogle } from "react-icons/fa";
 
 import { Form, Link, useLocation, useNavigate } from "react-router-dom";
- import { AuthContext } from "../Provider/AuthProvider"; 
+import useTitle from "../../hooks/useTitle";
+import { AuthContext } from "../Provider/AuthProvider"; 
+ 
 
 
 const Login = () => {
@@ -11,7 +13,8 @@ const Login = () => {
     signInWithGithub} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation(); 
-  console.log(location)
+  useTitle('Login');
+
 
 const from = location.state?.from?.pathname || '/' 
   

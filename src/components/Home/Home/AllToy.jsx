@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import useTitle from "../../../hooks/useTitle";
 import ShowToyes from "./ShowToyes";
 
 
 const AllToy = () => {
+  useTitle('allToy')
   const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch('https://toy-story-server-one.vercel.app/products')

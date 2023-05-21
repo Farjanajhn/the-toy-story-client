@@ -1,4 +1,5 @@
 
+import useTitle from "../../../hooks/useTitle";
 import Banner from "./Banner";
 /* import Category from "./Category"; */
 import Gallary from "./Gallary";
@@ -9,7 +10,7 @@ import HelpSection from "./HelpSection";
 
 
 const Home = () => {
-  
+  useTitle('home')
   return (
     <div>
       <Banner></Banner>

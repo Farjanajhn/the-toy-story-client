@@ -1,6 +1,8 @@
 import { FaFacebook, FaInstagram,  FaPinterest  } from 'react-icons/fa';
+import useTitle from '../../../hooks/useTitle';
 
 const HelpSection = () => {
+  useTitle('contact and offer')
   return (
     <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 my-4 '>
       <div className="col-span-2  bg-white px-8 rounded-lg">

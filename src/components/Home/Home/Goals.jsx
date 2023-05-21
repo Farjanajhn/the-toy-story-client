@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import useTitle from "../../../hooks/useTitle";
 
 
 const Goals = () => {
+  useTitle('goals')
   useEffect(() => {
     AOS.init();
     AOS.refresh();

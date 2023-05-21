@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../../../hooks/useTitle";
 
 
 
@@ -10,6 +11,7 @@ import Swal from "sweetalert2";
 const UpdateDetails = () => {
 
   const navigate = useNavigate();
+  useTitle('updateDetails')
     const [detail, setDetail] = useState([]);
     const { id } = useParams();
   /*   console.log(id); */

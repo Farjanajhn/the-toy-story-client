@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import AddToy from "../components/Home/Home/AddToy";
 import AllToy from "../components/Home/Home/AllToy";
 import Blogs from "../components/Home/Home/Blogs";
+import ErrorElement from "../components/Home/Home/ErrorElement";
 import Home from "../components/Home/Home/Home";
 import MyToy from "../components/Home/Home/MyToy";
 import UpdateDetails from "../components/Home/Home/UpdateDetails";
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: '*',
+    element:<ErrorElement></ErrorElement>
+  }
 ]);
 
 

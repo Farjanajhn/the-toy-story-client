@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { Link, useNavigation } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../../../hooks/useTitle";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const ShowToyes = ({ product }) => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigation();
+  useTitle('showSingleToy')
 
   const showAToast = () => {
     if (!user) {
