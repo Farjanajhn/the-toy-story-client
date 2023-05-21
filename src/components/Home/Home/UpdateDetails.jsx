@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 
 const UpdateDetails = () => {
 
-
+  const navigate = useNavigate();
     const [detail, setDetail] = useState([]);
     const { id } = useParams();
   /*   console.log(id); */
@@ -22,6 +22,7 @@ const UpdateDetails = () => {
       })
     },[id])
   const handleUpdate = (event) => {
+ 
     event.preventDefault();
     const form = event.target;
     const price = form.price.value;
@@ -58,6 +59,8 @@ const UpdateDetails = () => {
             'Your file has been updated successfully.',
             'success')
         }
+        navigate('/myToy')
+
     })
       }
     })

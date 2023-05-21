@@ -6,4 +6,7 @@
 
 * my toy is a private page without log in a user can not see enter into the page to see inside.
 
-* this website has category section to where they can see the products by their sub category.
+* this website has category section  where user can see the products by their sub category.
+
+* If a use is not log in and he wants to see the detail of a product by clicking view detail button.It will give a warning and redirect him to login page.
+
