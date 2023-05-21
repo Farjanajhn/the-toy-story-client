@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useContext } from "react";
+
 import { AuthContext } from "../../Provider/AuthProvider";
 import ToyList from "./ToyList";
 
@@ -9,6 +10,7 @@ const MyToy = () => {
   const { user } = useContext(AuthContext);
   const [myData, setMyData] = useState([]);
 
+ 
   useEffect(() => {
     fetch(`https://toy-story-server-one.vercel.app/myProducts?email=${user?.email}`)
       .then(res => res.json())
@@ -35,7 +37,7 @@ const MyToy = () => {
   
   return (
     <div >
-      <h1>{myData.length}</h1>
+      <h1 className="text-2xl text-center font-semibold my-4">Number of my product:{myData.length}</h1>
       <div className="overflow-x-auto w-full">
   <table className="table w-full">
     {/* head */}

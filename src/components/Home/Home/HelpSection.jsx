@@ -2,17 +2,23 @@ import { FaFacebook, FaInstagram,  FaPinterest  } from 'react-icons/fa';
 
 const HelpSection = () => {
   return (
-    <div className='grid grid-cols-3 gap-4 my-4 '>
-      <div className="col-span-2  bg-pink-100 px-8 rounded-lg">
+    <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 my-4 '>
+      <div className="col-span-2  bg-white px-8 rounded-lg">
         <h1 className='text-center text-2xl my-4 font-semibold'>Find Us On</h1>
         <div className='grid grid-cols-3 gap-4 '>
-          <div className=''><FaFacebook style={{ fontSize: '7rem',color: '' }}/><p>Facebook</p></div>
-          <div><FaInstagram style={{
-            fontSize: '7rem', color: '' }} />
+          <div className='py-4'>
+            <FaFacebook style={{ fontSize: '7rem', color: '' }} />
+            </div>
+          <div className='py-4'>
+            <FaInstagram style={{
+            fontSize: '7rem', color: ''
+          }} />
+            
           </div>
-          <div className='text-center'><FaPinterest style={{ fontSize: '7rem', color: '' }} />
-            <p className='
-          '></p></div>
+          <div className='py-4'>
+            <FaPinterest style={{ fontSize: '7rem', color: '' }} />
+            
+          </div>
         </div>
       </div>
       <div className=" bg-indigo-100 rounded-lg">

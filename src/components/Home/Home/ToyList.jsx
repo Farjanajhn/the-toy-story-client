@@ -12,7 +12,7 @@ const ToyList = ({ data,handleDelete }) => {
         <td>
           
         
-              <div className="mask mask-squircle w-12 h-12">
+              <div className="mask mask-squircle w-24 h-24">
           <img src={photo} alt="Avatar Tailwind CSS Component" />
               </div>
            

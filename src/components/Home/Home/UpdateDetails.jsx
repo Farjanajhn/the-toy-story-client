@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 
@@ -27,16 +28,40 @@ const UpdateDetails = () => {
     const description = form.description.value;
     const quantity = form.quantity.value;
     const newToy = { price, quantity, description };
-    console.log(newToy)
-    fetch(`https://toy-story-server-one.vercel.app/updateProducts/${id}`, {
+    console.log(newToy);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Update it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+   /*      Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        ) */
+        fetch(`https://toy-story-server-one.vercel.app/updateProducts/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body:JSON.stringify(newToy)
     })
       .then(res => res.json())
       .then(result => {
-      console.log(result)
+        console.log(result)
+        if (result.acknowledged == true) {
+          Swal.fire(
+            'Updated!',
+            'Your file has been updated successfully.',
+            'success')
+        }
     })
+      }
+    })
+    
    }
   return (
   

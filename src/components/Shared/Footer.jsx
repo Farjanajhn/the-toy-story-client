@@ -3,13 +3,13 @@ import logo from '../../assets/logo.png'
 const Footer = () => {
   return (
     <div>
-      <footer className="footer p-10 bg-indigo-400 text-base-content">
+      <footer className="footer p-10 bg-indigo-400 text-base-content rounded-lg">
   <div>
     <span className="footer-title">Services</span> 
-    <a className="link link-hover">Branding</a> 
-    <a className="link link-hover">Design</a> 
-    <a className="link link-hover">Marketing</a> 
-    <a className="link link-hover">Advertisement</a>
+    <a className="link link-hover">Kids clothing</a> 
+    <a className="link link-hover">Toys</a> 
+    <a className="link link-hover">Excessories</a> 
+    <a className="link link-hover">Books</a>
   </div> 
   <div>
     <span className="footer-title">Company</span> 
@@ -25,10 +25,10 @@ const Footer = () => {
     <a className="link link-hover">Cookie policy</a>
   </div>
 </footer> 
-<footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+<footer className="footer px-10 py-4  border-pink-100 text-base-content  rounded-lg">
   <div className="items-center grid-flow-col">
   <img className="rounded-lg" src={logo} alt="" />
-    <p>ACME Industries Ltd. <br/>Providing reliable tech since 1992</p>
+    <p>TOY STORY Industries Ltd. <br/>Providing reliable products since 1992</p>
   </div> 
   <div className="md:place-self-center md:justify-self-end">
     <div className="grid grid-flow-col gap-4">
