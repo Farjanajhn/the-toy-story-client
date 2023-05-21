@@ -10,3 +10,4 @@
 
 * If a use is not log in and he wants to see the detail of a product by clicking view detail button.It will give a warning and redirect him to login page.
 
+* Live site link : https://toy-story-b1089.web.app
