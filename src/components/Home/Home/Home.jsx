@@ -6,13 +6,16 @@ import Goals from "./Goals";
 import HelpSection from "./HelpSection";
 
 
+
+
 const Home = () => {
+  
   return (
     <div>
       <Banner></Banner>
       <Gallary></Gallary>
       <Category></Category>
-      <Goals></Goals>
+      <Goals> </Goals>
       <HelpSection></HelpSection>
 
     </div>
