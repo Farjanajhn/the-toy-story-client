@@ -1,4 +1,5 @@
  import { useContext } from "react"; 
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 import { Form, Link, useLocation, useNavigate } from "react-router-dom";
  import { AuthContext } from "../Provider/AuthProvider"; 
@@ -20,8 +21,9 @@ const from = location.state?.from?.pathname || '/'
     .then(result => {
       const loggeduser = result.user;
       console.log(loggeduser);
+      navigate(from,{replace:true})
 /* 
-      navigate(from); */
+    
     })
     .catch(error => {
       console.log('error', error.massage);
@@ -36,7 +38,7 @@ const from = location.state?.from?.pathname || '/'
       const signedUser = result.user;
       console.log(signedUser);
 
-      navigate('/')
+      navigate(from,{replace:true})
     })
       .catch(error => {
       
@@ -100,13 +102,13 @@ const from = location.state?.from?.pathname || '/'
        
               </p> 
               
-              <div className="flex flex-col w-full lg:flex-row">
-                <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">
-                <button onClick={handleGoogleSignIn} className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Sign In with google</button>
-                </div> 
-  <div className="divider lg:divider-horizontal">OR</div> 
-                <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">
-                  <button onClick={handleSignInWthGitHub} className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Sign In with google</button>
+              <div className="flex flex-col  lg:flex-row">
+               
+                <button onClick={handleGoogleSignIn} className=" "><FaGoogle  style={{ fontSize: '3rem',color: 'indigo',position:'center',margin:'auto' }}></FaGoogle>Sign In with google</button>
+              
+ OR 
+                <div className="grid flex-grow h-32 place-items-center">
+                  <button onClick={handleSignInWthGitHub} className=""><FaGithub  style={{ fontSize: '3rem',color: 'indigo',margin:'auto' }}/>Sign in with github</button>
   </div>
 </div>
       </div>

@@ -2,7 +2,7 @@
 
 const Blogs = () => {
   return (
-    <div className="mx-auto bg-indigo-100 text-center">
+    <div className="mx-auto bg-indigo-100 text-center px-8 py-8">
       <h1 className=" text-2xl">What is an access token and refresh token? How do they work and where should we store them on the client-side?</h1>
       <p>An access token and refresh token are commonly used in authentication and authorization systems.
 

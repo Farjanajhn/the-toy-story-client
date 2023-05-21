@@ -13,13 +13,13 @@ const UpdateDetails = () => {
     const { id } = useParams();
   /*   console.log(id); */
     useEffect(() => {
-      fetch('http://localhost:4000/products')
+      fetch('https://toy-story-server-one.vercel.app/products')
         .then(res => res.json())
         .then(data => {
           const foundDetail = data.find(d=>d._id == id);
           setDetail(foundDetail);
       })
-    })
+    },[id])
   const handleUpdate = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -28,7 +28,7 @@ const UpdateDetails = () => {
     const quantity = form.quantity.value;
     const newToy = { price, quantity, description };
     console.log(newToy)
-    fetch(`http://localhost:4000/updateProducts/${id}`, {
+    fetch(`https://toy-story-server-one.vercel.app/updateProducts/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body:JSON.stringify(newToy)

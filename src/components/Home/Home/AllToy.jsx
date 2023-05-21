@@ -6,7 +6,7 @@ import ShowToyes from "./ShowToyes";
 const AllToy = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:4000/products')
+    fetch('https://toy-story-server-one.vercel.app/products')
       .then(res => res.json())
     .then(data=>setProducts(data))
   },[])

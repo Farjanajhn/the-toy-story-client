@@ -10,7 +10,7 @@ const MyToy = () => {
   const [myData, setMyData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/myProducts?email=${user?.email}`)
+    fetch(`https://toy-story-server-one.vercel.app/myProducts?email=${user?.email}`)
       .then(res => res.json())
       .then(data => setMyData(data))
   }, [user])
@@ -18,14 +18,14 @@ const MyToy = () => {
   const handleDelete = id => {
     const proceed = confirm('are you sure you want to delete?')
     if (proceed) {
-      fetch(`http://localhost:4000/products/${id}`,
+      fetch(`https://toy-story-server-one.vercel.app/products/${id}`,
         {
           method: "DELETE"
         })
         .then(res => res.json())
         .then(data => { console.log(data);
       if (data.deletedCount > 0) {
-        alert('deleted suncessfull');
+        alert('deleted successfully');
         const remainingData = myData.filter(data => data._id !== id)
         setMyData(remainingData);
       }

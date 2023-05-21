@@ -4,7 +4,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import logo from './../../assets/logo.png';
-/* import lego from './../../assets/lego.png' */
+
 
 
 const NavBar = () => {
@@ -21,7 +21,9 @@ const NavBar = () => {
   const navItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
     
-      <li className='font-semibold'><Link to="myToy">My Toy</Link></li>
+    {
+      user?
+           <li className='font-semibold'><Link to="myToy">My Toy</Link></li>:""}
     
         <li className='font-semibold'><Link to="/allToy">All Toys</Link></li>
     {
@@ -56,11 +58,14 @@ const NavBar = () => {
       </ul>
     </div>
       {
-        user ?
+        user ? 
           <div className="navbar-end">
-            <FaUserCircle style={{ fontSize: '3rem',color: 'indigo' }}/>
+               <div className="tooltip" data-tip={user?.displayName}>
+            <FaUserCircle style={{ fontSize: '3rem',color: 'indigo' }}/>    </div>
             <button onClick={handleLogOut} className="btn ml-2 mr-2 bg-indigo-800">Log out</button> 
-      </div>:
+  
+       </div>
+       :
         <div className="navbar-end">
         <Link to="login" className="btn mr-2  bg-indigo-800">Login</Link>
       </div>
