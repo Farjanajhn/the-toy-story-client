@@ -38,7 +38,7 @@ const MyToy = () => {
   return (
     <div >
       <h1 className="text-2xl text-center font-semibold my-4">Number of my product:{myData.length}</h1>
-      <div className="overflow-x-auto w-full">
+      <div className="overflow-auto rounded-lg w-full">
   <table className="table w-full">
     {/* head */}
     <thead>
@@ -60,7 +60,7 @@ const MyToy = () => {
         <th></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody className="">
 
      
             {

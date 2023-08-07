@@ -9,7 +9,7 @@ const ToyList = ({ data,handleDelete }) => {
    
     <tr>
       
-        <td>
+        <td >
           
         
               <div className="mask mask-squircle w-24 h-24">
